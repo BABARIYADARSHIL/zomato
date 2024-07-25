@@ -1,0 +1,67 @@
+.Main-SearchBar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 7px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(22, 20, 20, 0.1);
+  width: 50%;
+  height: 7vh;
+}
+
+.Main-SearchBar svg {
+  margin-right: 5px;
+  color: #ff7e8b;
+}
+
+.Main-SearchBar input[type="text"] {
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  flex: 1;
+}
+
+.Main-SearchBar input[type="text"]::placeholder {
+  color: #888;
+}
+
+.Main-SearchBar input[type="text"]:not(:last-child) {
+  margin-right: 10px;
+}
+.Main-SearchBar-border {
+  border: 1px solid rgb(207, 207, 207);
+  height: 30px;
+  margin: 5px;
+  width: 0px;
+  margin: 5px;
+}
+.Main-SearchBar-Input {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .Main-SearchBar {
+    width: 75%;
+  }
+
+  .Main-SearchBar input[type="text"] {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Main-SearchBar {
+    width: 90%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .Main-SearchBar input[type="text"] {
+    font-size: 12px;
+    padding: 6px;
+    margin-bottom: 5px;
+  }
+}
