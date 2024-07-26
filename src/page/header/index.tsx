@@ -1,21 +1,21 @@
 import React from 'react'
 import Button from '../../component/Button'
-import './index.css'
+import Styles from './index.module.css'
 
 const NavBar = () => {
     return (
         <>
-            <div className='Main-Header'>
-                <div className='Main-Header-Left-Content'>
+            <div className={Styles.MainHeader}>
+                <div className={Styles.MainHeaderLeftContent}>
                 </div>
-                <div className='Main-Header-Right-Content'>
+                <div className={Styles.MainHeaderRightContent}>
                     <Button
-                        className="Main-Header-Right-Content-Button"
+                        className={Styles.MainHeaderRightContentButton}
                         name="Login"
                         label="Log in"
                     />
                     <Button
-                        className="Main-Header-Right-Content-Button"
+                        className={Styles.MainHeaderRightContentButton}
                         name="SignUp"
                         label="Sign Up"
                     />

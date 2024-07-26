@@ -1,0 +1,39 @@
+.MainHeader {
+  display: flex;
+  align-items: center;
+  padding: 20px 20px;
+}
+.MainHeaderLeftContent {
+  width: 60%;
+}
+.MainHeaderRightContent {
+  width: 15%;
+  display: flex;
+  justify-content: space-around;
+}
+.MainHeaderRightContentButton {
+  border: none;
+  color: #ffff;
+  background: none;
+  font-size: large;
+  cursor: pointer;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+@media (max-width: 768px) {
+  .MainHeader {
+    flex-direction: column;
+  }
+
+  .MainHeaderLeftContent,
+  .MainHeaderRightContent {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .MainHeaderRightContentButton {
+    font-size: medium;
+  }
+}
