@@ -1,0 +1,81 @@
+.SearchSuggestionMain {
+  max-height: 20rem;
+  overflow-y: auto;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.SearchSuggestionLink {
+  text-decoration: none;
+  color: inherit;
+}
+.SearchSuggestionMainContent {
+  width: 24rem;
+  display: flex;
+  flex-direction: row;
+  border-radius: 0.8rem;
+  margin: 1rem;
+  overflow: hidden;
+  background-color: #f9f9f9;
+   transition: transform 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.SearchSuggestionMainContent:hover {
+    transform: translateY(-5px); 
+}
+.SearchSuggestionMainImage {
+  width: 8rem;
+  height: 8rem;
+  padding: 15px;
+  border-radius: 1.5rem;
+  object-fit: cover;
+}
+.SearchSuggestionMainCardBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem;
+  width: 10rem;
+}
+.SearchSuggestionMainText {
+  margin: 0 0;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+
+  .SearchSuggestionMainContent {
+    width: 100%;
+  }
+
+  .SearchSuggestionMainImage {
+    border-radius: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .SearchSuggestionMainContent {
+    width: 20rem;
+    padding: 1rem;
+    align-items: center;
+    height: 10rem;
+  }
+
+  .SearchSuggestionMainImage {
+    width: 5rem;
+    height: 5rem;
+    padding: 0;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+  .SearchSuggestionMainCardBody {
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+  }
+  .SearchSuggestionMain{
+    width: 28rem;
+    height: 20rem;
+  }
+}

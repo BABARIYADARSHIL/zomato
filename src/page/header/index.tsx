@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '../../component/Button'
 import Styles from './index.module.css'
 
-const NavBar = () => {
+const NavBar: React.FC = () => {
     return (
         <>
             <div className={Styles.MainHeader}>

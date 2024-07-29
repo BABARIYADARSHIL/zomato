@@ -1,12 +1,31 @@
 import { DATA_FETCHED_FAIL, DATA_FETCHED_SUCESS, DATA_FETCHING } from "../type";
 
-const initialState = {
-  data: [],
+interface RestaurantItem {
+  id: number;
+  restaurantName: string;
+  image: string;
+  foodType: string;
+  location: string;
+  categories: string[];
+  items: { name: string; price: string }[];
+  rating: string;
+}
+
+interface State {
+  restaurants: RestaurantItem[];
+  loading: boolean;
+  error: string | null;
+}
+
+const initialState: State = {
+  restaurants: [],
   loading: false,
   error: null,
 };
 
-const restaurantReducer = (state = initialState, action: any) => {
+
+
+const restaurantReducer = (state = initialState, action: any):any => {
   console.log("state", state);
   console.log("action", action);
 
@@ -17,11 +36,16 @@ const restaurantReducer = (state = initialState, action: any) => {
       return {
         ...state,
         loading: false,
-        data: action.payload.data,
+        restaurants: action.payload,
         error: null,
       };
     case DATA_FETCHED_FAIL:
-      return { ...state, loading: false, data: [], error: action.payload };
+      return {
+        ...state,
+        loading: false,
+        restaurants: [],
+        error: action.payload,
+      };
     default:
       return state;
   }

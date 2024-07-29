@@ -12,14 +12,14 @@ interface SearchSuggestionsComponentProps {
     suggestions: Suggestion[];
 }
 
-const SearchSuggestionsComponent: React.FC<SearchSuggestionsComponentProps> = ({ suggestions }) => {
+const HomeSearchSuggestionsComponent: React.FC<SearchSuggestionsComponentProps> = ({ suggestions }) => {
     console.log("suggestions", suggestions);
 
     return (
         <div className='SearchSuggestionMain'>
-            {suggestions.map((suggestion: any) => (
+            {suggestions.map((suggestion: any, index: Number) => (
                 <div key={suggestion.id}>
-                    <NavLink to={`/Restaurant`} key={suggestion.id} className="SearchSuggestionLink">
+                    <NavLink to={`/item/${suggestion.id}`} className="SearchSuggestionLink">
                         <div key={suggestion.id} className="card SearchSuggestionMainContent">
                             <Image className="card-img-top SearchSuggestionMainImage" src={suggestion.image} alt={suggestion.restaurantName} />
                             <div className="SearchSuggestionMainCardBody">
@@ -37,4 +37,4 @@ const SearchSuggestionsComponent: React.FC<SearchSuggestionsComponentProps> = ({
     );
 };
 
-export default SearchSuggestionsComponent;
+export default HomeSearchSuggestionsComponent;

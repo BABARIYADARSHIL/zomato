@@ -1,13 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Styles from './index.module.css'
 import NavBar from '../header/index'
 import Image from '../../component/Image'
 import SerchComponent from '../../component/searchComponent/index'
-import { useDispatch } from 'react-redux'
-import { datafetching } from '../../store/searchRedux/action'
-
-const Home = () => {
-    const dispatch = useDispatch()
+import MyLocation from '../../component/location/index'
+import WeatherApp from '../../component/location/index'
+const Home: React.FC = () => {
 
     return (
         <>

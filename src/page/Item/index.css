@@ -1,0 +1,312 @@
+.MainItemContent {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  background-color: white;
+  position: -webkit-sticky; 
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%; 
+}
+.MainItemContentLeft {
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0rem 7rem 0rem 6rem;
+}
+.MainItemContentLeftContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: 20%;
+}
+.MainItemContentLeftContentImage {
+ width: 124px;
+  height: auto;
+}
+.ItemSerchComponent {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.MainItemRightContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+.MainItemRightContentButton {
+    background: white;
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s, color 0.3s;
+  border: none;
+  color: #666;
+}
+.MainItemRightContentButton:hover {
+  color: rgb(160, 155, 154);
+}
+.ItemContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 11rem 2rem 11rem;
+}
+.ItemContainerImageMain {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+}
+
+.ItemContainerImageFirst {
+  width: 50%;
+}
+.ItemContainerImageMainSecond {
+  width: 25%;
+}
+
+.ItemContainerImageMainThierd {
+  width: 25%;
+}
+.ItemMainContainer {
+  display: flex;
+  width: 100%;
+}
+.ItemMainContainerFirst {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.ItemMainContainerSecond {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+.ItemMainTitle {
+  height: 10vh;
+}
+
+.ItemTitle {
+  font-size: 3rem;
+  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.ItemImage1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  padding: 0.5rem;
+}
+.ItemImage1:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+.ItemImage2 {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  padding: 0.5rem;
+}
+.ItemImage2:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+.ItemImage3 {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  padding: 0.5rem;
+}
+.ItemImage3:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+.ItemImage4 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  padding: 0.5rem;
+}
+.ItemImage4:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+.ItemRating {
+  width: 5rem;
+  font-weight: bold;
+  background-color: rgb(6, 132, 6);
+  color: white;
+  height: 5vh;
+  border-radius: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  margin: 3vh;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.ItemMainCategory {
+  font-size: 1rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #777575;
+}
+.ItemMainCategory:hover {
+  color: rgb(0, 10, 0);
+}
+.ItemMainButtonContain {
+  width: 6rem;
+  height: 5vh;
+  border: 1px solid black;
+  border-radius: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0.5rem 0.5rem 0rem;
+}
+.ItemMainButton {
+  background-color: white;
+  text-decoration: none;
+  border-color: #777575;
+}
+.ItemMainButton:hover {
+  background-color: rgb(233, 233, 233);
+  text-decoration: none;
+}
+.ItemMainButtonColor {
+  color: red;
+}
+.ItemMenu {
+  margin-top: 20px;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: #f1f1f1;
+}
+
+.MenuItem {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.ItemMenu > h5 {
+  display: flex;
+  justify-content: center;
+}
+.MenuItem:hover {
+  background-color: #f0f0f0;
+}
+
+.MenuItemName,
+.MenuItemPrice {
+  font-size: 1em;
+  color: #333;
+}
+
+@media only screen and (max-width: 1200px) {
+  .ItemContainer {
+    padding: 2rem 10rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .ItemContainer {
+    padding: 2rem 6rem;
+  }
+  .ItemContainerImageMain {
+    flex-direction: column;
+    height: auto;
+  }
+  .ItemContainerImageFirst,
+  .ItemContainerImageMainSecond,
+  .ItemContainerImageMainThierd {
+    width: 100%;
+  }
+  .ItemMainContainer {
+    flex-direction: column;
+  }
+  .ItemMainContainerFirst,
+  .ItemMainContainerSecond {
+    width: 100%;
+  }
+  .MainItemContentLeft {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .MainItemContentLeft {
+    flex-direction: column;
+  }
+  .ItemSerchComponent {
+    width: 100%;
+  }
+  .MainItemRightContent {
+    width: 100%;
+    justify-content: center;
+  }
+  .ItemContainer {
+    padding: 2rem 2rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .MainItemContentLeftContent {
+    padding: 1rem;
+  }
+  .MainItemContentLeftContentImage {
+    width: 100px;
+    height: 20px;
+  }
+  .ItemTitle {
+    font-size: 2rem;
+  }
+  .ItemRating {
+    width: 4rem;
+    height: 4vh;
+  }
+  .ItemMainButtonContain {
+    width: 6rem;
+    height: 5vh;
+  }
+  .ItemMenu {
+    padding: 0.5rem;
+  }
+  .MenuItem {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+}

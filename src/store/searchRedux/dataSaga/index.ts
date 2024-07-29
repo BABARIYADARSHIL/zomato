@@ -11,6 +11,7 @@ export function* restaurantData(action: any): any {
   try {
     const response: ResponseData = yield call(RestaurantData, {
       search: action.payload.searchTerm,
+      
     });
     yield put(datafetchingSuccess(response.data));
   } catch (e: any) {
