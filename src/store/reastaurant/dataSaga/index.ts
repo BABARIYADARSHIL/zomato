@@ -3,22 +3,15 @@ import {
   FETCH_RESTAURANT_DATA
 } from "../../searchRedux/type/index";
 import { call, put, takeEvery } from "redux-saga/effects";
-import { fetchRestaurantFailure, fetchRestaurantSuccess } from "../action";
+import { fetchRestaurantData, fetchRestaurantFailure, fetchRestaurantSuccess } from "../action";
+import { Suggestion } from "../../../types/SearchType";
+import { AxiosResponse } from "axios";
 
-// interface Restaurant {
-//   id: string;
-//   name: string;
-//   // other restaurant properties
-// }
 
-// interface FetchRestaurantDataAction {
-//   type: typeof FETCH_RESTAURANT_DATA;
-//   payload?: any;
-// }
-export function* restaurant(action: any): any {
+export function* restaurant(action: ReturnType<typeof fetchRestaurantData>) {
   try {
-    const restaurant: any = yield call(RestaurantData, action.payload);
-    yield put(fetchRestaurantSuccess(restaurant.data));
+    const respones: AxiosResponse<Suggestion[]> = yield call(RestaurantData) 
+    yield put(fetchRestaurantSuccess(respones.data));
   } catch (e: any) {
     yield put(fetchRestaurantFailure(e.message));
   }

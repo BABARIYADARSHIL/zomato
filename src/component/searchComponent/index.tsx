@@ -1,51 +1,41 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Input from "../Input";
 import "./index.module.css";
 import Styles from "./index.module.css";
 import SearchSuggestionsComponent from "../searchSuggestions";
-// import { searchSuggestionsData} from "../../utile/searchSuggestions/searchSuggestions";
 import { useDispatch, useSelector } from "react-redux";
 import { datafetching } from "../../store/searchRedux/action";
+import { Suggestion, Item} from "../../types/SearchType";
+import { selectRestaurantData } from "../createSelector";
 
-// interface Suggestion {
-//   id: number;
-//   restaurantName: string;
-//   restaurantAddress: string;
-//   restaurantRating: number;
-//   restaurantImage: string;
-//   restaurantCuisine: string;
-//   restaurantType: string;
-//   categories: string[];
-//   items: { id: number; name: string; price: number }[];
-// }
+
 
 const SerchComponent: React.FC = () => {
-  const [searchSuggestions, setSearchSuggestions] = useState<any[]>([]);
+  const [searchSuggestions, setSearchSuggestions] = useState<Suggestion[]>([]);
   const [searchText, setSearchText] = useState<string>("");
   const [showSuggestions, setShowSuggestions] = useState<boolean>(true)
   const dispatch = useDispatch();
-  const data = useSelector((state: any) => state.restaurantSearch.restaurants.restaurants || []
-  );
-  const { error, loading } = useSelector((state: any) => state.restaurantSearch)
+  const { restaurants, error, loading } = useSelector(selectRestaurantData);
 
 
-
-  useEffect(() => {
+  const handleUpdate = useCallback(( data: Suggestion[]) => {
     if (searchText.length > 0 && Array.isArray(data)) {
-      const filteredSuggestions = data.filter((suggestion: any) => suggestion.restaurantName.toLowerCase().includes(searchText.toLowerCase()) ||
-        suggestion.categories.some((category: any) => category.toLowerCase().includes(searchText.toLowerCase())) ||
-        suggestion.items.some((item: any) => item.name.toLowerCase().includes(searchText.toLowerCase()))
+      const filteredSuggestions = data.filter((suggestion: Suggestion) =>
+        suggestion.restaurantName.toLowerCase().includes(searchText.toLowerCase()) ||
+        suggestion.categories.some((category: string) => category.toLowerCase().includes(searchText.toLowerCase())) ||
+        suggestion.items.some((item: Item) => item.name.toLowerCase().includes(searchText.toLowerCase()))
       );
       setSearchSuggestions(filteredSuggestions);
     } else {
       setSearchSuggestions([]);
     }
+  }, [searchText])
 
-  }, [data, searchText]);
+  useEffect(() => {
+    handleUpdate( restaurants || []);
+  }, [searchText, restaurants, handleUpdate]);
 
-  console.log("searchSuggestions", searchSuggestions);
-
-  const handleSearchSuggestion = (e: any) => {
+  const handleSearchSuggestion = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = e.target.value;
     setSearchText(searchValue);
     dispatch(datafetching(searchValue));
@@ -127,7 +117,6 @@ const SerchComponent: React.FC = () => {
         </div>
         <div className={Styles.MainSearchSuggetion}>
           {loading && <p>Loading...</p>}
-          {/* {error && <p className={Styles.ErrorMessage}>Error: {error.message}</p>} */}
           {!loading && !error && showSuggestions && searchSuggestions.length === 0 && searchText.length > 0 && (
             <p className={Styles.NoResultsMessage}>No results found for "{searchText}".</p>
           )}

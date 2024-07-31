@@ -5,8 +5,8 @@ import Image from '../../component/Image'
 import SerchComponent from '../../component/searchComponent/index'
 import MyLocation from '../../component/location/index'
 import WeatherApp from '../../component/location/index'
-const Home: React.FC = () => {
 
+const Home: React.FC = () => {
     return (
         <>
             <div className={Styles.MainHome}>

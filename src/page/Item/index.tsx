@@ -1,51 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, useParams } from 'react-router-dom';
+import { Link, NavLink, useParams } from 'react-router-dom';
 
 import './index.css';
 import Button from '../../component/Button';
 import Image from '../../component/Image';
 import { fetchRestaurantData } from '../../store/reastaurant/action';
 import HomeSerchComponent from '../../component/searchComponent/HomeSearch';
+import { Suggestion } from '../../types/SearchType';
+import { RootState } from '../../types/Item';
 
-
-interface MenuItem {
-    name: string;
-    price: string;
-}
-
-interface RestaurantItem {
-    id: number;
-    restaurantName: string;
-    image: string;
-    image2: string;
-    image3: string;
-    image4: string;
-    foodType: string;
-    location: string;
-    categories: string[];
-    items: MenuItem[];
-    rating: string;
-}
-
-interface RootState {
-    restaurantSearch: {
-        restaurants: RestaurantItem[];
-        loading: boolean;
-        error: string | null;
-    };
-}
 
 const Item: React.FC = () => {
     const dispatch = useDispatch();
-    const { id }: any = useParams<{ id: string }>();
-    const ReasurentId: any = id
-    const [item, setItem] = useState<RestaurantItem | null>();
-    const Items = useSelector((state: any) => state.restaurant.Restaurant || null);
-    const {loading, error} = useSelector((state: any) => state.restaurantSearch);
-    // const error = useSelector((state: any) => state.restaurantSearch.error);
-    console.log("itemsindexpage-----", Items);
-
+    const { id } = useParams<{ id: string }>();
+    const ReasurentId: string | undefined = id
+    const [item, setItem] = useState<Suggestion | null>();
+    const Items = useSelector((state: RootState) => state.restaurant.Restaurant || null);
+    const { loading, error } = useSelector((state: RootState) => state.restaurant
+    );
 
     useEffect(() => {
         if (ReasurentId) {
@@ -61,12 +34,15 @@ const Item: React.FC = () => {
     }, [Items, ReasurentId]);
 
 
-    // if (error) {
-    //     return <div className="error">Error: {error.message}
-    //     </div>;
-    // }
+    if (error) {
+        return <div className="error">Error: {error}
+        </div>;
+    }
     if (!item) {
         return <div className="loading">Loading... {loading}</div>;
+    }
+    if (loading) {
+        return <div className="loading">Loading...</div>;
     }
 
     return (
@@ -74,10 +50,12 @@ const Item: React.FC = () => {
             <div className='MainItemContent'>
                 <div className='MainItemContentLeft'>
                     <div className="MainItemContentLeftContent">
+                        <Link to='/'>
                         <Image
                             className="MainItemContentLeftContentImage"
                             src='https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png'
                         />
+                        </Link>
                     </div>
                     <div className='ItemSerchComponent'>
                         <HomeSerchComponent />
@@ -97,7 +75,7 @@ const Item: React.FC = () => {
                 </div>
             </div>
             {
-                item ?
+                item &&
                     (
                         <div className="ItemContainer">
                             <div className='ItemContainerImageMain'>
@@ -156,9 +134,7 @@ const Item: React.FC = () => {
                             </div>
                         </div>
                     )
-                    : (
-                        <div className="loading">Loading.......... {loading}</div>
-                    )
+                    
             }
         </>
     );

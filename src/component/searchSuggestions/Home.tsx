@@ -2,22 +2,13 @@ import React from 'react';
 import Image from '../Image';
 import './index.css'
 import { NavLink } from 'react-router-dom';
-
-interface Suggestion {
-    restaurantName: string;
-    categories: string[];
-}
-
-interface SearchSuggestionsComponentProps {
-    suggestions: Suggestion[];
-}
+import { SearchSuggestionsComponentProps } from '../../types/Restaurant';
 
 const HomeSearchSuggestionsComponent: React.FC<SearchSuggestionsComponentProps> = ({ suggestions }) => {
-    console.log("suggestions", suggestions);
 
     return (
         <div className='SearchSuggestionMain'>
-            {suggestions.map((suggestion: any, index: Number) => (
+            {suggestions.map((suggestion) => (
                 <div key={suggestion.id}>
                     <NavLink to={`/item/${suggestion.id}`} className="SearchSuggestionLink">
                         <div key={suggestion.id} className="card SearchSuggestionMainContent">

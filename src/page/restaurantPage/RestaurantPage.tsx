@@ -1,16 +1,17 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRestaurantData, filterAll, filterRating, filterVeg } from '../../store/reastaurant/action';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './index.css'
 import Image from '../../component/Image';
 import Button from '../../component/Button';
 import HomeSerchComponent from '../../component/searchComponent/HomeSearch';
+import { Suggestion } from '../../types/SearchType';
+import { RestaurantStates } from '../../types/Restaurant';
 
 const RestaurantPage: React.FC = () => {
   const dispatch = useDispatch();
-  const { FilteredData } = useSelector((state: any) => state.restaurant)
-  const { loading, error } = useSelector((state: any) => state.restaurant)
+  const { FilteredData, loading, error } = useSelector((state: { restaurant: RestaurantStates }) => state.restaurant)
 
 
   useEffect(() => {
@@ -21,10 +22,12 @@ const RestaurantPage: React.FC = () => {
       <div className='MainRestaurantContent'>
         <div className='MainRestaurantContentLeft'>
           <div className="MainRestaurantContentLeftContent">
+            <Link to='/'>
             <Image
               className="MainRestaurantContentLeftContentImage"
               src='https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png'
             />
+            </Link>
           </div>
           <div className='RestaurantSerchComponent'>
             <HomeSerchComponent />
@@ -71,7 +74,7 @@ const RestaurantPage: React.FC = () => {
             ) : error ? (
               <p>Error: {error.message}</p>
             ) : FilteredData && FilteredData.length > 0 ? (
-              FilteredData.map((item: any) => (
+                  FilteredData.map((item: Suggestion) => (
                 <div className="card-cards" key={item.id}>
                   <NavLink to={`/item/${item.id}`} className='NavLink'>
                     <div className="Main-Restaurant-image">

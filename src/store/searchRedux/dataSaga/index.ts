@@ -1,17 +1,13 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 import { RestaurantData } from "../../../api/restaurant/RestaurantData";
 import { DATA_FETCHING } from "../type/index";
-import { datafetchingFail, datafetchingSuccess } from "../action";
+import { datafetching, datafetchingFail, datafetchingSuccess } from "../action";
+import { ResponseData } from "../../../types/SearchType";
 
-interface ResponseData {
-  data: any;
-}
-
-export function* restaurantData(action: any): any {
+export function* restaurantData(action: ReturnType<typeof datafetching>) {
   try {
     const response: ResponseData = yield call(RestaurantData, {
       search: action.payload.searchTerm,
-      
     });
     yield put(datafetchingSuccess(response.data));
   } catch (e: any) {

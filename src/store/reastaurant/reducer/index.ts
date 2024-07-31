@@ -7,23 +7,15 @@ import {
   FILTER_VEG,
 } from "../../../store/searchRedux/type/index";
 
-interface RestaurantState {
-  loading: boolean;
-  Restaurant: any[];
-  FilteredData: any[];
-  error: string | null;
-}
-
-const initialState: RestaurantState = {
-  Restaurant: [],
-  FilteredData: [],
-  loading: false,
-  error: null,
-};
+import {
+  RestaurantActionTypes,
+  RestaurantState,
+  initialState,
+} from "../../../types/Restaurant";
 
 const restaurantDataReducer = (
   state = initialState,
-  action: any
+  action: RestaurantActionTypes
 ): RestaurantState => {
   switch (action.type) {
     case FETCH_RESTAURANT_DATA:
@@ -62,7 +54,7 @@ const restaurantDataReducer = (
       return {
         ...state,
         FilteredData: state.Restaurant.filter(
-          (item: any) => item.foodType === "Veg"
+          (item) => item.foodType === "Veg"
         ),
       };
 

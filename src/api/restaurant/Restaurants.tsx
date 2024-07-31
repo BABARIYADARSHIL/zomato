@@ -1,6 +1,7 @@
 import axios from "axios"
 import { restaurantdata } from "./api"
+import { restaurantsdata } from "../../types/Restaurant";
 
-export const RestaurantData = (params: any) => {
-    return axios.get(restaurantdata, params)
+export const RestaurantData = () => {
+    return axios.get<restaurantsdata>(restaurantdata)
 }
