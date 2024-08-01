@@ -1,16 +1,17 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Input from "../Input";
-import "./index.module.css";
-import Styles from "./index.module.css";
-import SearchSuggestionsComponent from "../searchSuggestions";
 import { useDispatch, useSelector } from "react-redux";
 import { datafetching } from "../../store/searchRedux/action";
-import { Suggestion, Item} from "../../types/SearchType";
+import { Suggestion, Item } from "../../types/SearchType";
 import { selectRestaurantData } from "../createSelector";
+import { ReusableSearchComponentProps } from "../../types/SearchType";
 
 
-
-const SerchComponent: React.FC = () => {
+const SerchComponent: React.FC<ReusableSearchComponentProps> = ({
+  placeholderText,
+  suggestionComponent: SuggestionComponent,
+  styles
+}) => {
   const [searchSuggestions, setSearchSuggestions] = useState<Suggestion[]>([]);
   const [searchText, setSearchText] = useState<string>("");
   const [showSuggestions, setShowSuggestions] = useState<boolean>(true)
@@ -18,7 +19,7 @@ const SerchComponent: React.FC = () => {
   const { restaurants, error, loading } = useSelector(selectRestaurantData);
 
 
-  const handleUpdate = useCallback(( data: Suggestion[]) => {
+  const handleUpdate = useCallback((data: Suggestion[]) => {
     if (searchText.length > 0 && Array.isArray(data)) {
       const filteredSuggestions = data.filter((suggestion: Suggestion) =>
         suggestion.restaurantName.toLowerCase().includes(searchText.toLowerCase()) ||
@@ -32,7 +33,7 @@ const SerchComponent: React.FC = () => {
   }, [searchText])
 
   useEffect(() => {
-    handleUpdate( restaurants || []);
+    handleUpdate(restaurants || []);
   }, [searchText, restaurants, handleUpdate]);
 
   const handleSearchSuggestion = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -47,9 +48,9 @@ const SerchComponent: React.FC = () => {
   return (
     <>
       <div>
-        <div className={Styles.MainSearchBar}>
-          <div className={Styles.MainSearchBarMain}>
-            <div className={Styles.MainSearchBarLocation}>
+        <div className={styles.MainSearchBar}>
+          <div className={styles.MainSearchBarMain}>
+            <div className={styles.MainSearchBarLocation}>
               <i className="bi bi-geo-alt-fill">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -80,8 +81,8 @@ const SerchComponent: React.FC = () => {
                 </svg>
               </i>
             </div>
-            <div className={Styles.MainSearchBarBorder}></div>
-            <div className={Styles.MainSearchBarSearch}>
+            <div className={styles.MainSearchBarBorder}></div>
+            <div className={styles.MainSearchBarSearch}>
               <i className="bi bi-search">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -95,9 +96,9 @@ const SerchComponent: React.FC = () => {
                 </svg>
               </i>
               <Input
-                className={Styles.MainSearchBarInput}
+                className={styles.MainSearchBarInput}
                 type="text"
-                placeholder="Search for restaurant, cuisine or a dish"
+                placeholder={placeholderText}
                 value={searchText}
                 onChange={handleSearchSuggestion}
               />
@@ -109,19 +110,19 @@ const SerchComponent: React.FC = () => {
 
             {
               searchSuggestions.length > 0 ?
-                <button onClick={toggleSuggestions} className={Styles.ToggleButton}>
+                <button onClick={toggleSuggestions} className={styles.ToggleButton}>
                   {showSuggestions ? "Hide" : "Show"}
                 </button> : null
             }
           </div>
         </div>
-        <div className={Styles.MainSearchSuggetion}>
+        <div className={styles.MainSearchSuggetion}>
           {loading && <p>Loading...</p>}
           {!loading && !error && showSuggestions && searchSuggestions.length === 0 && searchText.length > 0 && (
-            <p className={Styles.NoResultsMessage}>No results found for "{searchText}".</p>
+            <p className={styles.NoResultsMessage}>No results found for "{searchText}".</p>
           )}
           {!loading && !error && showSuggestions && searchSuggestions.length > 0 && (
-            <SearchSuggestionsComponent suggestions={searchSuggestions} />
+            <SuggestionComponent suggestions={searchSuggestions} />
           )}
         </div>
       </div>

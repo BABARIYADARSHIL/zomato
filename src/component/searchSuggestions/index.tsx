@@ -2,15 +2,15 @@ import React from 'react';
 import Image from '../Image';
 import './index.css'
 import { NavLink } from 'react-router-dom';
-import { SearchSuggestionsComponentProps } from '../../types/SearchType';
+import { SearchSuggestionsProps } from '../../types/SearchType';
 
 
-const SearchSuggestionsComponent: React.FC<SearchSuggestionsComponentProps> = ({ suggestions }) => {
+const SearchSuggestionsComponent: React.FC<SearchSuggestionsProps> = ({ suggestions, getNavLinkPath }) => {
     return (
         <div className='SearchSuggestionMain'>
             {suggestions.map((suggestion) => (
                 <div key={suggestion.id}>
-                    <NavLink to={`/Restaurant`} key={suggestion.id} className="SearchSuggestionLink">
+                    <NavLink to={getNavLinkPath(suggestion)} className="SearchSuggestionLink">
                         <div key={suggestion.id} className="card SearchSuggestionMainContent">
                             <Image className="card-img-top SearchSuggestionMainImage" src={suggestion.image} alt={suggestion.restaurantName} />
                             <div className="SearchSuggestionMainCardBody">

@@ -62,7 +62,7 @@
   color: rgb(160, 155, 154);
 }
 
-.NavBar-Main-center-NavLink {
+.NavBarMainCenterNavLink {
   text-decoration: none;
   color: white;
   font-size: 1.2em;
@@ -73,8 +73,8 @@
   border: 1px solid black;
 }
 
-.NavBar-Main-center-NavLink:hover,
-.NavBar-Main-center-NavLink:focus {
+.NavBarMainCenterNavLink:hover,
+.NavBarMainCenterNavLink:focus {
   color: white;
   background-color: #e9140d;
   transform: scale(1.05);
@@ -87,24 +87,13 @@
   font-weight: bold;
 }
 
-
-.Main-Restaurant-MAin {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 75vh;
-  width: 100%;
-  color: white;
-  display: flex;
-}
-
-.Main-Restaurant {
+.MainRestaurant {
   padding: 2rem;
   min-height: 100vh;
   position: relative;
   color: white;
 }
-.Main-Restaurant::before {
+.MainRestaurant::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -114,12 +103,12 @@
   pointer-events: none;
   z-index: 1;
 }
-.Main-Restaurant > * {
+.MainRestaurant > * {
   position: relative;
   z-index: 2;
 }
 
-.card-cards {
+.CardCards {
   background-color: white;
   padding: 15px;
   border-radius: 15px;
@@ -131,12 +120,12 @@
   height: auto;
 }
 
-.card-cards:hover {
+.CardCards:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.Main-Restaurant-image {
+.MainRestaurantImage {
   background-size: cover;
   height: 150px;
   overflow: hidden;
@@ -144,26 +133,26 @@
   margin-bottom: 15px;
 }
 
-.Main-Restaurant-image-img {
+.MainRestaurantImageImg {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
 
-.Main-Restaurant-center {
+.MainRestaurantCenter {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
 }
 
-.Main-Restaurant-Left {
+.MainRestaurantLeft {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-.Main-Restaurant-Left-Content {
+.MainRestaurantLeftContent {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -176,17 +165,17 @@
   transition: transform 0.3s;
 }
 
-.Main-Restaurant-Left-Content NavLink {
+.MainRestaurantLeftContent NavLink {
   cursor: pointer;
   font-weight: bold;
   transition: color 0.3s;
 }
 
-.Main-Restaurant-Left-Content div:hover {
+.MainRestaurantLeftContent div:hover {
   color: #ffbe33;
 }
 
-.Main-Restaurant-Rigth {
+.MainRestaurantRigth {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -269,46 +258,41 @@
     margin: 0.5rem 0;
     width: 100%;
   }
-   .NavBar-Main-center-NavLink {
+   .NavBarMainCenterNavLink {
     font-size: 1em;
   }
-  .Main-Restaurant-MAin {
-    height: auto;
-    padding: 2rem 0;
-  }
-
-  .Main-Restaurant {
+  .MainRestaurant {
     padding: 1rem;
   }
 
-  .Main-Restaurant-center {
+  .MainRestaurantCenter {
     gap: 1rem;
   }
 
-  .Main-Restaurant-Left {
+  .MainRestaurantLeft {
     padding: 0;
   }
 
-  .Main-Restaurant-Left-Content {
+  .MainRestaurantLeftContent {
     flex-direction: row;
     gap: 10px;
     padding: 10px;
     width: 100%;
   }
 
-  .Main-Restaurant-Rigth {
+  .MainRestaurantRigth {
     flex-direction: column;
     align-items: center;
     padding: 1rem;
   }
 
-  .card-cards {
+  .CardCards {
     width: 100%;
     margin: 0.5rem 0;
     max-width: 300px;
   }
 
-  .Main-Restaurant-image {
+  .MainRestaurantImage {
     height: 200px;
   }
 

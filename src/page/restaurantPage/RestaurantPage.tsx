@@ -2,12 +2,12 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRestaurantData, filterAll, filterRating, filterVeg } from '../../store/reastaurant/action';
 import { Link, NavLink } from 'react-router-dom';
-import './index.css'
-import Image from '../../component/Image';
-import Button from '../../component/Button';
-import HomeSerchComponent from '../../component/searchComponent/HomeSearch';
 import { Suggestion } from '../../types/SearchType';
 import { RestaurantStates } from '../../types/Restaurant';
+import Image from '../../component/Image';
+import Button from '../../component/Button';
+import RestaurantSerchComponent from '../../component/searchComponent/RestaurantSearch';
+import './index.css'
 
 const RestaurantPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -17,20 +17,21 @@ const RestaurantPage: React.FC = () => {
   useEffect(() => {
     dispatch(fetchRestaurantData());
   }, [dispatch])
+
   return (
     <>
       <div className='MainRestaurantContent'>
         <div className='MainRestaurantContentLeft'>
           <div className="MainRestaurantContentLeftContent">
             <Link to='/'>
-            <Image
-              className="MainRestaurantContentLeftContentImage"
-              src='https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png'
-            />
+              <Image
+                className="MainRestaurantContentLeftContentImage"
+                src='https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png'
+              />
             </Link>
           </div>
           <div className='RestaurantSerchComponent'>
-            <HomeSerchComponent />
+            <RestaurantSerchComponent />
           </div>
           <div className="MainRestaurantRightContent">
             <Button
@@ -47,40 +48,40 @@ const RestaurantPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="Main-Restaurant">
-        <div className="Main-Restaurant-center">
-          <div className="Main-Restaurant-Left">
-            <div className="Main-Restaurant-Left-Content">
+      <div className="MainRestaurant">
+        <div className="MainRestaurantCenter">
+          <div className="MainRestaurantLeft">
+            <div className="MainRestaurantLeftContent">
               <NavLink
                 className={({ isActive }) =>
-                  `NavBar-Main-center-NavLink ${isActive ? "active" : "inactive"}`
+                  `NavBarMainCenterNavLink ${isActive ? "active" : "inactive"}`
                 }
                 to='' onClick={() => dispatch(filterAll())}>ALL</NavLink>
               <NavLink
                 className={({ isActive }) =>
-                  `NavBar-Main-center-NavLink ${isActive ? "active" : "inactive"}`
+                  `NavBarMainCenterNavLink ${isActive ? "active" : "inactive"}`
                 }
                 to='' onClick={() => dispatch(filterRating())}>Rating</NavLink>
               <NavLink
                 className={({ isActive }) =>
-                  `NavBar-Main-center-NavLink ${isActive ? "active" : "inactive"}`
+                  `NavBarMainCenterNavLink ${isActive ? "active" : "inactive"}`
                 }
                 to='' onClick={() => dispatch(filterVeg())}>Veg</NavLink>
             </div>
           </div>
-          <div className="Main-Restaurant-Rigth">
+          <div className="MainRestaurantRigth">
             {loading ? (
               <p>Loading...</p>
             ) : error ? (
               <p>Error: {error.message}</p>
             ) : FilteredData && FilteredData.length > 0 ? (
-                  FilteredData.map((item: Suggestion) => (
-                <div className="card-cards" key={item.id}>
+              FilteredData.map((item: Suggestion) => (
+                <div className="CardCards" key={item.id}>
                   <NavLink to={`/item/${item.id}`} className='NavLink'>
-                    <div className="Main-Restaurant-image">
+                    <div className="MainRestaurantImage">
                       <img
                         src={item.image}
-                        className="card-img-top Main-Restaurant-image-img"
+                        className="card-img-top MainRestaurantImageImg"
                         alt={item.restaurantName}
                       />
                     </div>

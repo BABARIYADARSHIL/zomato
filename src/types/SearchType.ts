@@ -51,3 +51,12 @@ export const initialState: State = {
   loading: false,
   error: null,
 };
+export interface ReusableSearchComponentProps {
+  placeholderText: string;
+  suggestionComponent: React.FC<{ suggestions: Suggestion[] }>;
+  styles: { [key: string]: string };
+}
+
+export interface SearchSuggestionsProps extends SearchSuggestionsComponentProps {
+  getNavLinkPath: (suggestion: Suggestion) => string;
+}
