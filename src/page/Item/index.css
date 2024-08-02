@@ -109,10 +109,10 @@
   background-repeat: no-repeat;
   background-position: center;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  padding: 0.5rem;
+  padding: 0.5rem 0.6rem 0.5rem 0.5rem;
 }
 .ItemImage1:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
   opacity: 0.8;
 }
 .ItemImage2 {
@@ -213,12 +213,10 @@
   width: 30%;
   display: flex;
   justify-content: space-around;
-  gap: 1rem;
   margin-bottom: 10px;
   padding: 10px;
   background-color: #fff;
-  border-radius: 4px;
-
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .ItemMenu > h5 {
@@ -226,13 +224,17 @@
   justify-content: center;
 }
 .MenuItem:hover {
-  background-color: #f0f0f0;
+  background-color: #dcdcdc;
+  transform: scale(1.05);
 }
 
 .MenuItemName,
 .MenuItemPrice {
   font-size: 1em;
   color: #333;
+}
+.SpinnerBorder {
+  margin: 24rem 10rem 10rem 40rem;
 }
 
 @media only screen and (max-width: 1200px) {

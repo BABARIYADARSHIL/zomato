@@ -290,7 +290,9 @@
     padding: 10px 0;
   }
 }
-
+.SpinnerBorder{
+  margin: 22rem 10rem 10rem 42rem;
+}
 @media (max-width: 480px) {
   .MainRestaurantContent {
     padding: 0.5rem;
@@ -320,6 +322,9 @@
     padding: 0.5rem;
     margin: 0.5rem 0;
   }
+     .SpinnerBorder{
+  margin: 10rem 10rem 10rem 10rem;
+}
 }
 @media (max-width: 1355px) {
   .MainRestaurantContent {
@@ -349,6 +354,9 @@
     padding: 0.5rem 0.75rem;
     margin: 0 0.5rem;
   }
+   .SpinnerBorder{
+  margin: 15rem 10rem 10rem 43rem;
+}
 }
 @media (max-width: 900px) {
   .MainRestaurantContent {
@@ -384,4 +392,7 @@
     margin: 0.5rem 0;
     width: 100%;
   }
+  .SpinnerBorder{
+  margin: 15rem 10rem 10rem 19rem;
+}
 }

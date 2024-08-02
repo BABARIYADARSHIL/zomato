@@ -8,6 +8,7 @@ import Image from '../../component/Image';
 import Button from '../../component/Button';
 import RestaurantSerchComponent from '../../component/searchComponent/RestaurantSearch';
 import './index.css'
+import Loading from '../../component/loader';
 
 const RestaurantPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,15 @@ const RestaurantPage: React.FC = () => {
   useEffect(() => {
     dispatch(fetchRestaurantData());
   }, [dispatch])
+
+  if (!FilteredData) {
+    return <Loading
+      className="spinner-border text-primary SpinnerBorder" />
+  }
+  if (loading) {
+    return <Loading
+      className="spinner-border text-primary SpinnerBorder" />
+  }
 
   return (
     <>
@@ -71,7 +81,8 @@ const RestaurantPage: React.FC = () => {
           </div>
           <div className="MainRestaurantRigth">
             {loading ? (
-              <p>Loading...</p>
+              <Loading
+                className="spinner-border text-primary SpinnerBorder" />
             ) : error ? (
               <p>Error: {error.message}</p>
             ) : FilteredData && FilteredData.length > 0 ? (

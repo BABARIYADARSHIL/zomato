@@ -5,6 +5,7 @@ import { datafetching } from "../../store/searchRedux/action";
 import { Suggestion, Item } from "../../types/SearchType";
 import { selectRestaurantData } from "../createSelector";
 import { ReusableSearchComponentProps } from "../../types/SearchType";
+import Loading from "../loader";
 
 
 const SerchComponent: React.FC<ReusableSearchComponentProps> = ({
@@ -20,7 +21,7 @@ const SerchComponent: React.FC<ReusableSearchComponentProps> = ({
 
 
   const handleUpdate = useCallback((data: Suggestion[]) => {
-    if (searchText.length > 0 && Array.isArray(data)) {
+    if (searchText.length > 0 && data) {
       const filteredSuggestions = data.filter((suggestion: Suggestion) =>
         suggestion.restaurantName.toLowerCase().includes(searchText.toLowerCase()) ||
         suggestion.categories.some((category: string) => category.toLowerCase().includes(searchText.toLowerCase())) ||
@@ -117,9 +118,8 @@ const SerchComponent: React.FC<ReusableSearchComponentProps> = ({
           </div>
         </div>
         <div className={styles.MainSearchSuggetion}>
-          {loading && <div className={`spinner-border text-primary ${styles.SpinnerBorder}`} role="status">
-            <span className="sr-only"></span>
-          </div>}
+          {loading && <Loading
+            className={`spinner-border text-primary ${styles.SpinnerBorder}`} />}
           {!loading && !error && showSuggestions && searchSuggestions.length === 0 && searchText.length > 0 && (
             <p className={styles.NoResultsMessage}>No results found for "{searchText}".</p>
           )}

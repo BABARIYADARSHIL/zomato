@@ -8,6 +8,7 @@ import Button from '../../component/Button';
 import Image from '../../component/Image';
 import RestaurantSerchComponent from '../../component/searchComponent/RestaurantSearch';
 import './index.css';
+import Loading from '../../component/loader';
 
 
 const Item: React.FC = () => {
@@ -38,10 +39,12 @@ const Item: React.FC = () => {
         </div>;
     }
     if (!item) {
-        return <div className="loading">Loading... {loading}</div>;
+        return <Loading
+            className="spinner-border text-primary SpinnerBorder" />          
     }
     if (loading) {
-        return <div className="loading">Loading...</div>;
+        return <Loading
+            className="spinner-border text-primary SpinnerBorder" />
     }
 
     return (
@@ -73,7 +76,14 @@ const Item: React.FC = () => {
                     </div>
                 </div>
             </div>
-            {
+            {loading ? (
+                <div>
+                    <Loading
+                        className="spinner-border text-primary SpinnerBorder" />
+                </div>
+            ) : error ? (
+                <div className="error">Error: {error}</div>
+            ) :
                 item &&
                 (
                     <div className="ItemContainer">
