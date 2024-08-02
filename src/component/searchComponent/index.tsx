@@ -117,7 +117,9 @@ const SerchComponent: React.FC<ReusableSearchComponentProps> = ({
           </div>
         </div>
         <div className={styles.MainSearchSuggetion}>
-          {loading && <p>Loading...</p>}
+          {loading && <div className="spinner-border text-primary" role="status">
+            <span className="sr-only"></span>
+          </div>}
           {!loading && !error && showSuggestions && searchSuggestions.length === 0 && searchText.length > 0 && (
             <p className={styles.NoResultsMessage}>No results found for "{searchText}".</p>
           )}
