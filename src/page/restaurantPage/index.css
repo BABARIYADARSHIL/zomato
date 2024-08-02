@@ -62,7 +62,7 @@
   color: rgb(160, 155, 154);
 }
 
-.NavBarMainCenterNavLink {
+.MainRestaurantLeftContentNavLink {
   text-decoration: none;
   color: white;
   font-size: 1.2em;
@@ -73,12 +73,12 @@
   border: 1px solid black;
 }
 
-.NavBarMainCenterNavLink:hover,
-.NavBarMainCenterNavLink:focus {
+.MainRestaurantLeftContentNavLink:hover,
+.MainRestaurantLeftContentNavLink:focus {
   color: white;
   background-color: #e9140d;
   transform: scale(1.05);
-   outline: none;
+  cursor: pointer;
 }
 
 .active {
@@ -164,17 +164,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
 }
-
-.MainRestaurantLeftContent NavLink {
-  cursor: pointer;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-.MainRestaurantLeftContent div:hover {
-  color: #ffbe33;
-}
-
 .MainRestaurantRigth {
   display: flex;
   flex-wrap: wrap;
@@ -258,7 +247,7 @@
     margin: 0.5rem 0;
     width: 100%;
   }
-   .NavBarMainCenterNavLink {
+   .MainRestaurantLeftContentNavLink {
     font-size: 1em;
   }
   .MainRestaurant {

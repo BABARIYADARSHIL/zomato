@@ -54,17 +54,17 @@ const RestaurantPage: React.FC = () => {
             <div className="MainRestaurantLeftContent">
               <NavLink
                 className={({ isActive }) =>
-                  `NavBarMainCenterNavLink ${isActive ? "active" : "inactive"}`
+                  `MainRestaurantLeftContentNavLink ${isActive ? "active" : "inactive"}`
                 }
                 to='' onClick={() => dispatch(filterAll())}>ALL</NavLink>
               <NavLink
                 className={({ isActive }) =>
-                  `NavBarMainCenterNavLink ${isActive ? "active" : "inactive"}`
+                  `MainRestaurantLeftContentNavLink ${isActive ? "active" : "inactive"}`
                 }
                 to='' onClick={() => dispatch(filterRating())}>Rating</NavLink>
               <NavLink
                 className={({ isActive }) =>
-                  `NavBarMainCenterNavLink ${isActive ? "active" : "inactive"}`
+                  `MainRestaurantLeftContentNavLink ${isActive ? "active" : "inactive"}`
                 }
                 to='' onClick={() => dispatch(filterVeg())}>Veg</NavLink>
             </div>

@@ -49,9 +49,10 @@
   width: 100%; 
   max-width: 28rem; 
   position: absolute;
-  z-index: 10;
-
-  
+  z-index: 10; 
+}
+.SpinnerBorder {
+  margin: 10rem;
 }
 .ToggleButton {
   margin-top: 10px;
@@ -79,6 +80,9 @@
   .MainSearchSuggetion {
     width: 90%; 
     max-width: none;
+  }
+  .SpinnerBorder{
+    margin: 3rem;
   }
 }
 
