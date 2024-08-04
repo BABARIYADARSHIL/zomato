@@ -3,8 +3,6 @@ import Styles from './index.module.css'
 import NavBar from '../header/index'
 import Image from '../../component/Image'
 import SerchComponent from '../../component/searchComponent/HomeSearch'
-import MyLocation from '../../component/location/index'
-import WeatherApp from '../../component/location/index'
 
 const Home: React.FC = () => {
     return (

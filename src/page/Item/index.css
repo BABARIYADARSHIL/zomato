@@ -1,17 +1,17 @@
 .MainItemContent {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   border-bottom: 1px solid #ddd;
   background-color: white;
-  position: -webkit-sticky; 
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 1000;
-  width: 100%; 
+  z-index: 100;
+  width: 100%;
 }
 .MainItemContentLeft {
- display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -25,7 +25,7 @@
   width: 20%;
 }
 .MainItemContentLeftContentImage {
- width: 124px;
+  width: 124px;
   height: auto;
 }
 .ItemSerchComponent {
@@ -43,7 +43,7 @@
   width: 20%;
 }
 .MainItemRightContentButton {
-    background: white;
+  background: white;
   width: 100%;
   font-size: 1rem;
   cursor: pointer;

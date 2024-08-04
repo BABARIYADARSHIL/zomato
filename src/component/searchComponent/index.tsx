@@ -6,6 +6,7 @@ import { Suggestion, Item } from "../../types/SearchType";
 import { selectRestaurantData } from "../createSelector";
 import { ReusableSearchComponentProps } from "../../types/SearchType";
 import Loading from "../loader";
+import { fetchLocation } from "../../store/location/action";
 
 
 const SerchComponent: React.FC<ReusableSearchComponentProps> = ({
@@ -16,9 +17,17 @@ const SerchComponent: React.FC<ReusableSearchComponentProps> = ({
   const [searchSuggestions, setSearchSuggestions] = useState<Suggestion[]>([]);
   const [searchText, setSearchText] = useState<string>("");
   const [showSuggestions, setShowSuggestions] = useState<boolean>(true)
+  const [locationInput, setLocationInput] = useState<string>("");
   const dispatch = useDispatch();
   const { restaurants, error, loading } = useSelector(selectRestaurantData);
+  const location = useSelector((state: any) => state.locationReducer.location);
 
+
+  useEffect(() => {
+    if (location?.city) {
+      setLocationInput(location.city);
+    }
+  }, [location]);
 
   const handleUpdate = useCallback((data: Suggestion[]) => {
     if (searchText.length > 0 && data) {
@@ -46,13 +55,17 @@ const SerchComponent: React.FC<ReusableSearchComponentProps> = ({
   const toggleSuggestions = () => {
     setShowSuggestions(prevState => !prevState);
   }
+
+  const handleLocationClick = () => {
+    dispatch(fetchLocation());
+  };
   return (
     <>
       <div>
         <div className={styles.MainSearchBar}>
           <div className={styles.MainSearchBarMain}>
             <div className={styles.MainSearchBarLocation}>
-              <i className="bi bi-geo-alt-fill">
+              <i className="bi bi-geo-alt-fill" onClick={handleLocationClick}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -67,7 +80,10 @@ const SerchComponent: React.FC<ReusableSearchComponentProps> = ({
 
               <Input
                 type="text"
+                name="Location"
                 placeholder="Search for restaurant"
+                value={locationInput}
+                readOnly
               ></Input>
               <i className="bi bi-caret-down-fill">
                 <svg
