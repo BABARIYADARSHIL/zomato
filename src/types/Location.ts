@@ -1,7 +1,5 @@
 export interface IpResponse {
-  data: {
-    ip: string;
-  };
+  ip: string;
 }
 
 export interface LocationResponse {
