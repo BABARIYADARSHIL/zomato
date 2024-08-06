@@ -1,16 +1,8 @@
-from operator import and_
-from flask import Flask, render_template, request, session, redirect,url_for, jsonify,make_response, abort
-from flask import flash
+from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime, timedelta
-from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired
-from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 import jwt
-from flask import current_app
-from jwt import encode
 from flask import jsonify
 from flask_cors import CORS
 from sqlalchemy import or_
@@ -210,5 +202,4 @@ def get_restaurant():
         result.append(restaurant_data)
     return jsonify(result)
 if __name__ == "__main__":
-    # app.run(host="192.168.1.32",port=5500)
     app.run(host="127.0.0.1",port=5500)
