@@ -5,11 +5,11 @@ import { Link, NavLink } from 'react-router-dom';
 import { Suggestion } from '../../types/SearchType';
 import { RestaurantStates } from '../../types/Restaurant';
 import Image from '../../component/Image';
-import Button from '../../component/Button';
 import RestaurantSerchComponent from '../../component/searchComponent/RestaurantSearch';
 import './index.css'
 import Loading from '../../component/loader';
 import RestaurantCard from '../../component/ReastueantCard';
+import RestaurantButton from '../../component/Button/RestaurantButton';
 
 const RestaurantPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -43,18 +43,7 @@ const RestaurantPage: React.FC = () => {
           <div className='RestaurantSerchComponent'>
             <RestaurantSerchComponent />
           </div>
-          <div className="MainRestaurantRightContent">
-            <Button
-              className="MainRestaurantRightContentButton"
-              name="Login"
-              label="Log in"
-            />
-            <Button
-              className="MainRestaurantRightContentButton"
-              name="SignUp"
-              label="Sign Up"
-            />
-          </div>
+          <RestaurantButton />
         </div>
       </div>
 

@@ -1,25 +1,14 @@
 import React from 'react'
-import Button from '../../component/Button'
-import Styles from './index.module.css'
+import './index.css'
+import HomeButton from '../../component/Button/HomeButton'
 
 const NavBar: React.FC = () => {
     return (
         <>
-            <div className={Styles.MainHeader}>
-                <div className={Styles.MainHeaderLeftContent}>
+            <div className="MainHeader">
+                <div className="MainHeaderLeftContent">
                 </div>
-                <div className={Styles.MainHeaderRightContent}>
-                    <Button
-                        className={Styles.MainHeaderRightContentButton}
-                        name="Login"
-                        label="Log in"
-                    />
-                    <Button
-                        className={Styles.MainHeaderRightContentButton}
-                        name="SignUp"
-                        label="Sign Up"
-                    />
-                </div>
+                <HomeButton />
             </div>
         </>
     )

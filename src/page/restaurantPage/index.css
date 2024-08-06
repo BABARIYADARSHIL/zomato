@@ -15,7 +15,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 0rem 7rem 0rem 6rem;
+  padding: 0rem 7rem 0rem 1rem;
 }
 
 .MainRestaurantContentLeftContent {
@@ -43,7 +43,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20%;
+   /* width: 20%; */
 }
 
 .MainRestaurantRightContentButton {
@@ -97,7 +97,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
   width: 100%;
-  max-width: 250px;
+  max-width: 320px;
   height: auto;
 }
 
@@ -146,7 +146,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 5rem;
+  gap: 10rem;
   padding: 2rem;
 }
 
@@ -323,7 +323,6 @@
   }
 
   .MainRestaurantRightContent {
-    width: 30%;
     justify-content: center;
   }
 

@@ -8,3 +8,8 @@ export interface RootState {
     error: string | null;
   };
 }
+
+export interface ItemCardProps {
+  item: Suggestion;
+}
+

@@ -1,6 +1,5 @@
 import React from 'react'
-
-interface LoadingProps extends React.HTMLAttributes<HTMLDivElement> { }
+import { LoadingProps } from '../../types/Loading';
 
 const Loading: React.FC<LoadingProps> = (props) => {
   return (

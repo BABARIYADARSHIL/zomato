@@ -7,9 +7,9 @@
   width: 60%;
 }
 .MainHeaderRightContent {
-  width: 15%;
   display: flex;
   justify-content: space-around;
+  gap: 5rem;
 }
 .MainHeaderRightContentButton {
   border: none;
