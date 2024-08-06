@@ -27,7 +27,7 @@ const Item: React.FC = () => {
     }, [ReasurentId, dispatch]);
 
     useEffect(() => {
-        if (Array.isArray(Items) && Items.length > 0 && ReasurentId) {
+        if (Items && Items.length > 0 && ReasurentId) {
             const selectedItem = Items.find((item) => item.id === parseInt(ReasurentId));
             setItem(selectedItem || null);
         }
