@@ -9,6 +9,7 @@ import Button from '../../component/Button';
 import RestaurantSerchComponent from '../../component/searchComponent/RestaurantSearch';
 import './index.css'
 import Loading from '../../component/loader';
+import RestaurantCard from '../../component/ReastueantCard';
 
 const RestaurantPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -27,7 +28,6 @@ const RestaurantPage: React.FC = () => {
     return <Loading
       className="spinner-border text-primary SpinnerBorder" />
   }
-
   return (
     <>
       <div className='MainRestaurantContent'>
@@ -87,30 +87,7 @@ const RestaurantPage: React.FC = () => {
               <p>Error: {error.message}</p>
             ) : FilteredData && FilteredData.length > 0 ? (
               FilteredData.map((item: Suggestion) => (
-                <div className="CardCards" key={item.id}>
-                  <NavLink to={`/item/${item.id}`} className='NavLink'>
-                    <div className="MainRestaurantImage">
-                      <img
-                        src={item.image}
-                        className="card-img-top MainRestaurantImageImg"
-                        alt={item.restaurantName}
-                      />
-                    </div>
-                    <div className="card-body">
-                      <h5 className="card-title">{item.restaurantName}</h5>
-                      <h5 className="card-title">{item.foodType}</h5>
-                      <p className="card-text">
-                        Location: {item.location}
-                      </p>
-                      <p className="star-rating">
-                        {item.rating}.0
-                      </p>
-                      <p className="card-text">
-                        Categories: {item.categories.join(", ")}
-                      </p>
-                    </div>
-                  </NavLink>
-                </div>
+                <RestaurantCard key={item.id} item={item} />
               ))
             )
               : (
