@@ -1,10 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Suggestion } from '../../types/SearchType';
-
-interface RestaurantCardProps {
-    item: Suggestion;
-}
+import { RestaurantCardProps } from '../../types/Restaurant';
 
 const RestaurantCard: React.FC<RestaurantCardProps> = ({ item }) => {
     return (

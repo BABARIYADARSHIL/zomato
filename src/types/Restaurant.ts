@@ -78,7 +78,9 @@ export interface RestaurantStates {
   loading: boolean;
   error: { message: string } | null;
 }
-
+export interface RestaurantCardProps {
+  item: Suggestion;
+}
 
 export type RestaurantActionTypes =
   | DataFetchingAction
