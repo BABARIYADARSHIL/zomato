@@ -46,7 +46,10 @@
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-top: 1rem;
-  width: 28rem;
+  width: 100%;
+  max-width: 28rem;
+  position: absolute;
+  z-index: 10;
 }
 .SpinnerBorder {
   margin: 10rem;
@@ -63,12 +66,6 @@
 
 .ToggleButton:hover {
   background-color: #ff7e8b;
-}
-.ErrorMessage {
-  color: red;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 10px;
 }
 
 .NoResultsMessage {
@@ -87,6 +84,13 @@
     font-size: 14px;
     padding: 6px 10px;
   }
+  .MainSearchSuggetion {
+    width: 90%;
+    max-width: none;
+  }
+  .SpinnerBorder {
+    margin: 3rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -98,5 +102,9 @@
   .MainSearchBar input[type="text"] {
     font-size: 12px;
     padding: 4px 8px;
+  }
+  .MainSearchSuggetion {
+    width: 100%;
+    max-width: none;
   }
 }

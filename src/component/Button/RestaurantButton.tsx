@@ -1,6 +1,6 @@
 import React from 'react'
-import ButtonContainer from './index'
-import '../../page/restaurantPage/index.css'
+import ButtonContainer from './Index'
+import '../../page/restaurantPage/Index.css'
 
 const RestaurantButton: React.FC = () => {
   return (

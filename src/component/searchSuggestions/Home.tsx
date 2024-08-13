@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchSuggestionsComponent from './index';
+import SearchSuggestionsComponent from './Index';
 import { SearchSuggestionsComponentProps } from '../../types/SearchType';
 
 const HomeSearchSuggestionsComponent: React.FC<SearchSuggestionsComponentProps> = (props) => {

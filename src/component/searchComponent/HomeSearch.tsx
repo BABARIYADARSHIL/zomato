@@ -1,5 +1,5 @@
 import React from 'react';
-import ReusableSearchComponent from './index';
+import ReusableSearchComponent from './Index';
 import HomeSearchSuggestionsComponent from '../searchSuggestions/Home';
 import styles from './Home.module.css';
 

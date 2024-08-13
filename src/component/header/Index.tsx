@@ -1,6 +1,6 @@
 import React from 'react'
-import './index.css'
-import HomeButton from '../../component/Button/HomeButton'
+import './Index.css'
+import HomeButton from '../button/HomeButton'
 
 const NavBar: React.FC = () => {
     return (

@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from '../page/home';
-import Item from '../page/Item/index'
-import RestaurantPage from '../page/restaurantPage/RestaurantPage';
+import Home from '../page/home/Index';
+import Item from '../page/item/Index'
+import RestaurantPage from '../page/restaurantPage/Index';
 
 const Index = () => {
     return (

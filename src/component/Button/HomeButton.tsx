@@ -1,5 +1,5 @@
 import React from 'react'
-import ButtonContainer from './index'
+import ButtonContainer from './Index'
 
 const HomeButton: React.FC = () => {
   return (

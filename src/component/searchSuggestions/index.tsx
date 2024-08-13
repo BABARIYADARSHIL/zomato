@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from '../Image';
-import './index.css'
+import './Index.css'
 import { NavLink } from 'react-router-dom';
 import { SearchSuggestionsProps } from '../../types/SearchType';
 

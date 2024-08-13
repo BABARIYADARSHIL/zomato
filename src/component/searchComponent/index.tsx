@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Input from "../Input";
 import { useDispatch, useSelector } from "react-redux";
-import { datafetching } from "../../store/searchRedux/action";
+import { datafetching } from "../../store/searchRedux/action/Index";
 import { Suggestion, Item } from "../../types/SearchType";
-import { selectRestaurantData } from "../createSelector";
+import { selectRestaurantData } from "../CreateSelector";
 import { ReusableSearchComponentProps } from "../../types/SearchType";
-import Loading from "../loader";
-import { fetchLocation } from "../../store/location/action";
+import Loading from "../loader/Index";
+import { fetchLocation } from "../../store/location/action/Index";
 
 
 const SerchComponent: React.FC<ReusableSearchComponentProps> = ({

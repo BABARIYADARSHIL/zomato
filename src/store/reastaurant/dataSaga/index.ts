@@ -3,7 +3,7 @@ import {
   FETCH_RESTAURANT_DATA
 } from "../../searchRedux/type/index";
 import { call, put, takeEvery } from "redux-saga/effects";
-import { fetchRestaurantData, fetchRestaurantFailure, fetchRestaurantSuccess } from "../action";
+import { fetchRestaurantData, fetchRestaurantFailure, fetchRestaurantSuccess } from "../action/Index";
 import { Suggestion } from "../../../types/SearchType";
 import { AxiosResponse } from "axios";
 

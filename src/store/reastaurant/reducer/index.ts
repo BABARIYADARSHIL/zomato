@@ -5,7 +5,7 @@ import {
   FILTER_ALL,
   FILTER_RATING,
   FILTER_VEG,
-} from "../../../store/searchRedux/type/index";
+} from "../../searchRedux/type/index";
 
 import {
   RestaurantActionTypes,

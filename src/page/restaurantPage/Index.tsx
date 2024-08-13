@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRestaurantData, filterAll, filterRating, filterVeg } from '../../store/reastaurant/action';
+import { fetchRestaurantData, filterAll, filterRating, filterVeg } from '../../store/reastaurant/action/Index';
 import { Link, NavLink } from 'react-router-dom';
 import { Suggestion } from '../../types/SearchType';
 import { RestaurantStates } from '../../types/Restaurant';
 import Image from '../../component/Image';
 import RestaurantSerchComponent from '../../component/searchComponent/RestaurantSearch';
-import './index.css'
-import Loading from '../../component/loader';
-import RestaurantCard from '../../component/ReastueantCard';
-import RestaurantButton from '../../component/Button/RestaurantButton';
+import './Index.css'
+import Loading from '../../component/loader/Index';
+import RestaurantCard from '../../component/reastueantCard/Index';
+import RestaurantButton from '../../component/button/RestaurantButton';
 
 const RestaurantPage: React.FC = () => {
   const dispatch = useDispatch();

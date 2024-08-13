@@ -1,7 +1,7 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 import { RestaurantSearch } from "../../../api/restaurant/RestaurantSearch";
 import { DATA_FETCHING } from "../type/index";
-import { datafetching, datafetchingFail, datafetchingSuccess } from "../action";
+import { datafetching, datafetchingFail, datafetchingSuccess } from "../action/Index";
 import { ResponseData } from "../../../types/SearchType";
 
 export function* restaurantData(action: ReturnType<typeof datafetching>) {

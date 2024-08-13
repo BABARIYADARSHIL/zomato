@@ -1,6 +1,6 @@
 import React from 'react'
-import Styles from './index.module.css'
-import NavBar from '../header/index'
+import Styles from './Index.module.css'
+import NavBar from '../../component/header/Index'
 import Image from '../../component/Image'
 import SerchComponent from '../../component/searchComponent/HomeSearch'
 

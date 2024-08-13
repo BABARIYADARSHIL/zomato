@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
-import { fetchRestaurantData } from '../../store/reastaurant/action';
+import { fetchRestaurantData } from '../../store/reastaurant/action/Index';
 import { Suggestion } from '../../types/SearchType';
 import { RootState } from '../../types/Item';
 import Image from '../../component/Image';
 import RestaurantSerchComponent from '../../component/searchComponent/RestaurantSearch';
-import './index.css';
-import Loading from '../../component/loader';
-import ItemCard from '../../component/ItemCard';
-import ItemButton from '../../component/Button/ItemButton';
+import './Index.css';
+import ItemCard from '../../component/itemCard/Index';
+import Loading from '../../component/loader/Index';
+import ItemButton from '../../component/button/ItemButton';
 
 const Item: React.FC = () => {
     const dispatch = useDispatch();

@@ -1,6 +1,6 @@
 import React from 'react'
-import ButtonContainer from './index'
-import '../../page/Item/index.css'
+import ButtonContainer from './Index'
+import '../../page/item/Index.css'
 
 const ItemButton: React.FC = () => {
   return (

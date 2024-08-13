@@ -1,7 +1,7 @@
 import React from 'react';
-import ReusableSearchComponent from './index';
+import ReusableSearchComponent from './Index';
 import RestaurantSearchSuggestionsComponent from '../searchSuggestions/RestaurantSearchSuggestion';
-import styles from './Restaurant.module.css';
+import styles from './Home.module.css';
 
 const RestaurantSerchComponent: React.FC = () => {
     return (

@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
-import restaurantReducer from "../searchRedux/reducer";
-import restaurantDataReducer from "../reastaurant/reducer";
-import locationReducer from "../location/reducer";
+import restaurantReducer from "../searchRedux/reducer/Index";
+import restaurantDataReducer from "../reastaurant/reducer/Index";
+import locationReducer from "../location/reducer/Index";
 
 const rootReducer = combineReducers<any>({
   restaurantSearch: restaurantReducer,

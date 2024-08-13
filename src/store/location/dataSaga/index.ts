@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from "redux-saga/effects";
 import { FETCH_LOCATION_REQUEST } from "../../searchRedux/type/index";
-import { fetchLocationFailure, fetchLocationSuccess } from "../action";
+import { fetchLocationFailure, fetchLocationSuccess } from "../action/Index";
 import { IpResponse, LocationResponse } from "../../../types/Location";
 import {
   getIpAddress,
