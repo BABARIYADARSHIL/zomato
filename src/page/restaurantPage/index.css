@@ -1,9 +1,9 @@
 .MainRestaurantContent {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   border-bottom: 1px solid #ddd;
-  background-color: white; 
+  background-color: white;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -43,7 +43,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-   /* width: 20%; */
 }
 
 .MainRestaurantRightContentButton {
@@ -62,7 +61,6 @@
 
 .MainRestaurantLeftContentNavLink {
   text-decoration: none;
-  color: white;
   font-size: 1.2em;
   transition: color 0.3s, transform 0.3s;
   position: relative;
@@ -78,7 +76,6 @@
   transform: scale(1.05);
   cursor: pointer;
 }
-
 .active {
   color: #333;
   background-color: white;
@@ -225,7 +222,7 @@
     margin: 0.5rem 0;
     width: 100%;
   }
-   .MainRestaurantLeftContentNavLink {
+  .MainRestaurantLeftContentNavLink {
     font-size: 1em;
   }
   .MainRestaurant {
@@ -268,7 +265,7 @@
     padding: 10px 0;
   }
 }
-.SpinnerBorder{
+.SpinnerBorder {
   margin: 22rem 10rem 10rem 42rem;
 }
 @media (max-width: 480px) {
@@ -300,9 +297,9 @@
     padding: 0.5rem;
     margin: 0.5rem 0;
   }
-     .SpinnerBorder{
-  margin: 10rem 10rem 10rem 10rem;
-}
+  .SpinnerBorder {
+    margin: 10rem 10rem 10rem 10rem;
+  }
 }
 @media (max-width: 1355px) {
   .MainRestaurantContent {
@@ -331,9 +328,9 @@
     padding: 0.5rem 0.75rem;
     margin: 0 0.5rem;
   }
-   .SpinnerBorder{
-  margin: 15rem 10rem 10rem 43rem;
-}
+  .SpinnerBorder {
+    margin: 15rem 10rem 10rem 43rem;
+  }
 }
 @media (max-width: 900px) {
   .MainRestaurantContent {
@@ -369,7 +366,7 @@
     margin: 0.5rem 0;
     width: 100%;
   }
-  .SpinnerBorder{
-  margin: 15rem 10rem 10rem 19rem;
-}
+  .SpinnerBorder {
+    margin: 15rem 10rem 10rem 19rem;
+  }
 }
