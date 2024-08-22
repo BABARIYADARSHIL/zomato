@@ -1,0 +1,110 @@
+.MainSearchBar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+}
+
+.MainSearchBarMain {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.MainSearchBarLocation,
+.MainSearchBarSearch {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.MainSearchBar svg {
+  color: #ff7e8b;
+  margin-right: 8px;
+}
+
+.MainSearchBar input[type="text"] {
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  flex: 1;
+}
+
+.MainSearchBar input[type="text"]::placeholder {
+  color: #888;
+}
+
+.MainSearchSuggetion {
+  overflow-y: auto;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 28rem;
+  position: absolute;
+  z-index: 10;
+}
+.SpinnerBorder {
+  margin: 10rem;
+}
+.ToggleButton {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #ff7e8b;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.ToggleButton:hover {
+  background-color: #ff7e8b;
+}
+
+.NoResultsMessage {
+  color: grey;
+  font-style: italic;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .MainSearchBar {
+    padding: 0.5rem;
+  }
+
+  .MainSearchBar input[type="text"] {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+  .MainSearchSuggetion {
+    width: 90%;
+    max-width: none;
+  }
+  .SpinnerBorder {
+    margin: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .MainSearchBar {
+    padding: 0.5rem;
+    width: 25rem;
+  }
+
+  .MainSearchBar input[type="text"] {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  .MainSearchSuggetion {
+    width: 100%;
+    max-width: none;
+  }
+}

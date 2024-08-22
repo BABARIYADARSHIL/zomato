@@ -1,0 +1,69 @@
+.MainHome {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+.MainHomeContentLeft {
+  background-image: url("https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png");
+  background-size: cover;
+  background-position: center;
+  transition: opacity 1.4s ease, transform 1.4s ease;
+  height: 100vh;
+ 
+}
+
+.MainHomeContentLeftContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 15%;
+  padding: 2rem;  
+}
+
+.MainHomeContentLeftContentImage {
+  width: 250px;
+  height: 60px;
+}
+
+.MainHomeContentLeftContentText {
+  color: white;
+  font-family: "Times New Roman", serif;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.MainHomeContentLeftContentText h1 {
+  font-size: 2rem;
+}
+
+.MainHomeContentLeftContentSearchBar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+
+}
+
+
+@media (max-width: 768px) {
+  .MainHomeContentLeftContentImage {
+    width: 200px;
+  }
+
+  .MainHomeContentLeftContentText h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .MainHomeContentLeftContentImage {
+    width: 150px;
+  }
+
+  .MainHomeContentLeftContentText h1 {
+    font-size: 1.2rem;
+  }
+}

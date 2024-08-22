@@ -1,0 +1,372 @@
+.MainRestaurantContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.MainRestaurantContentLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0rem 7rem 0rem 1rem;
+}
+
+.MainRestaurantContentLeftContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: 20%;
+}
+
+.MainRestaurantContentLeftContentImage {
+  width: 124px;
+  height: auto;
+}
+
+.RestaurantSerchComponent {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.MainRestaurantRightContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.MainRestaurantRightContentButton {
+  background: white;
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: none;
+  color: #666;
+}
+
+.MainRestaurantRightContentButton:hover {
+  color: rgb(160, 155, 154);
+}
+
+.MainRestaurantLeftContentNavLink {
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.3s, transform 0.3s;
+  position: relative;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.MainRestaurantLeftContentNavLink:hover,
+.MainRestaurantLeftContentNavLink:focus {
+  color: white;
+  background-color: #e9140d;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.active {
+  color: #333;
+  background-color: white;
+  font-weight: bold;
+}
+
+.MainRestaurant {
+  padding: 2rem;
+}
+
+.CardCards {
+  background-color: white;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+}
+
+.CardCards:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.MainRestaurantImage {
+  background-size: cover;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.MainRestaurantImageImg {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.MainRestaurantCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.MainRestaurantLeft {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.MainRestaurantLeftContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.MainRestaurantRigth {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10rem;
+  padding: 2rem;
+}
+
+.star-rating {
+  color: gold;
+  font-size: 1.2rem;
+}
+
+.btn-primary {
+  background-color: #ffbe33;
+  border: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #e6a50e;
+  transform: scale(1.05);
+}
+
+.NavLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+  transition: color 0.3s;
+}
+
+.card-title:hover {
+  color: #ffbe33;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .MainRestaurantContent {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .MainRestaurantContentLeft {
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .MainRestaurantContentLeftContent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .MainRestaurantContentLeftContentImage {
+    width: 100px;
+    height: auto;
+  }
+
+  .MainRestaurantRightContent {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .MainRestaurantRightContentButton {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+  .MainRestaurantLeftContentNavLink {
+    font-size: 1em;
+  }
+  .MainRestaurant {
+    padding: 1rem;
+  }
+
+  .MainRestaurantCenter {
+    gap: 1rem;
+  }
+
+  .MainRestaurantLeft {
+    padding: 0;
+  }
+
+  .MainRestaurantLeftContent {
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .MainRestaurantRigth {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .CardCards {
+    width: 100%;
+    margin: 0.5rem 0;
+    max-width: 300px;
+  }
+
+  .MainRestaurantImage {
+    height: 200px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+.SpinnerBorder {
+  margin: 22rem 10rem 10rem 42rem;
+}
+@media (max-width: 480px) {
+  .MainRestaurantContent {
+    padding: 0.5rem;
+    flex-direction: column;
+  }
+
+  .MainRestaurantContentLeft {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .MainRestaurantContentLeftContent {
+    padding: 0.5rem;
+  }
+
+  .MainRestaurantContentLeftContentImage {
+    width: 80px;
+  }
+
+  .MainRestaurantRightContent {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .MainRestaurantRightContentButton {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+  }
+  .SpinnerBorder {
+    margin: 10rem 10rem 10rem 10rem;
+  }
+}
+@media (max-width: 1355px) {
+  .MainRestaurantContent {
+    padding: 1.5rem;
+  }
+
+  .MainRestaurantContentLeft {
+    width: 70%;
+    flex-direction: column;
+  }
+
+  .MainRestaurantContentLeftContent {
+    padding: 0.75rem;
+  }
+
+  .MainRestaurantContentLeftContentImage {
+    width: 110px;
+  }
+
+  .MainRestaurantRightContent {
+    justify-content: center;
+  }
+
+  .MainRestaurantRightContentButton {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+    margin: 0 0.5rem;
+  }
+  .SpinnerBorder {
+    margin: 15rem 10rem 10rem 43rem;
+  }
+}
+@media (max-width: 900px) {
+  .MainRestaurantContent {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .MainRestaurantContentLeft {
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .MainRestaurantContentLeftContent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .MainRestaurantContentLeftContentImage {
+    width: 100px;
+    height: auto;
+  }
+
+  .MainRestaurantRightContent {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .MainRestaurantRightContentButton {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+  .SpinnerBorder {
+    margin: 15rem 10rem 10rem 19rem;
+  }
+}
